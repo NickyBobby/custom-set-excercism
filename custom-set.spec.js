@@ -12,8 +12,8 @@ describe('CustomSet', function() {
     var nonDuplicateSubject = new CustomSet([2, 1]);
     expect(subject.eql(nonDuplicateSubject)).toBe(false);
   });
-  
-  xit('can delete elements', function(){
+
+  it('can delete elements', function(){
     var expected = new CustomSet([1, 3]);
     var actual = new CustomSet([3, 2, 1]).delete(2);
     expect(actual.eql(expected)).toBe(true);
@@ -23,7 +23,7 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('can check for difference', function(){
+  it('can check for difference', function(){
     var expected = new CustomSet([1, 3]);
     var actual = new CustomSet([3, 2, 1]).difference(new CustomSet([2, 4]));
     expect(actual.eql(expected)).toBe(true);
@@ -31,8 +31,8 @@ describe('CustomSet', function() {
     var actual2 = new CustomSet([1, 2, 3]).difference(new CustomSet([4]));
     expect(actual2.eql(expected2)).toBe(true);
   });
-  
-  xit('can test disjoint', function() {
+
+  it('can test disjoint', function() {
     var actual = new CustomSet([1, 2]).disjoint(new CustomSet([3, 4]));
     expect(actual).toBe(true);
     var actual2 = new CustomSet([1, 2]).disjoint(new CustomSet([2, 3]));
@@ -41,7 +41,7 @@ describe('CustomSet', function() {
     expect(actual3).toBe(true);
   });
 
-  xit('can be emptied', function() {
+  it('can be emptied', function() {
     var actual = new CustomSet([1, 2]).empty();
     var expected = new CustomSet();
     expect(actual.eql(expected)).toBe(true);
